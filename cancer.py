@@ -27,7 +27,7 @@ for i in range(corr.shape[0]):
 				       columns[j] = False
 selected_columns = cancer_df.columns[columns]
 cancer_df = cancer_df[selected_columns]
-#run logistic model result and get rid of P-value greater than .05
+#run logistic model result and get rid of P-values greater than .05
 logit_model=sm.Logit(Y,X)
 result=logit_model.fit()
 print(result.summary2())
@@ -38,4 +38,4 @@ logreg = LogisticRegression()
 logreg.fit(X_train, Y_train)
 y_pred = logreg.predict(X_test)
 print('Accuracy of logistic model on test set:{:.3f}'.format(logreg.score(X_test, Y_test)))
-#predicted malignant and benign breat tumors to an accuracy of 100%
+#predicted malignant and benign breast tumors to an accuracy of 100%
